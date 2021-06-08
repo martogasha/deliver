@@ -25,7 +25,6 @@ class CreateBookingsTable extends Migration
             $table->integer('user_id');
             $table->integer('carrier_id')->nullable();
             $table->string('time');
-            $table->string('day');
             $table->string('amPm');
             $table->integer('status')->default(0);
             $table->timestamps();
