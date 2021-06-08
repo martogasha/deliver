@@ -21,7 +21,7 @@ class BookingController extends Controller
                 'time' => $request->time,
                 'amPm' => $request->timeslot,
             ]);
-            return redirect(url('search'));
+            return response($output);
         }
     }
 }
