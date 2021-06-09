@@ -223,6 +223,7 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="user_idd" value="{{\Illuminate\Support\Facades\Auth::id()}}">
 
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 
@@ -251,8 +252,14 @@
 
     var channel = pusher.subscribe('my-channel');
     channel.bind('my-event', function(data) {
-        $('#requestSuccess').modal('show');
-        $('#requestReceived').html('<i class="far fa-thumbs-up"></i><b style="color:green">Request Received</b>')
+        var user = $('#user_idd').val();
+        var carrier = data.carrier_id;
+        if (carrier==user) {
+            $('#requestSuccess').modal('show');
+            $('#requestReceived').html('<i class="far fa-thumbs-up"></i><b style="color:green">Request Received</b>')
+        }
+
+
     });
 
     // Vue application
