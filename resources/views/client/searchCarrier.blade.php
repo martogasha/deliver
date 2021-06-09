@@ -254,10 +254,10 @@
     channel.bind('my-event', function(data) {
         var user = $('#user_idd').val();
         var carrier = data.carrier_id;
-        if (carrier==user) {
+
             $('#requestSuccess').modal('show');
             $('#requestReceived').html('<i class="far fa-thumbs-up"></i><b style="color:green">Request Received</b>')
-        }
+
 
 
     });
